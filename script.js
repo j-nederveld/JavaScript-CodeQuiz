@@ -102,3 +102,82 @@ function nextQuestion() {
     }
     showQuestion(questions[currentQuestionIndex])
 }
+
+
+/**
+ * removePreviousAnswerOptions
+ *
+ * Short description
+ *
+ * @param type Descrtipion
+ */
+function removePreviousAnswerOptions() {
+  while (anwswerButtonsContainer.firstChild) {
+      anwswerButtonsContainer.removeChild(anwswerButtonsContainer.firstChild)
+  }
+}
+
+/**
+* showQuestion
+*
+* Shows a question based on the current index.
+*
+* @param object question A question object, as defined in the questions array above.
+*/
+function showQuestion(question) {
+  questionElement.innerText = question.question;
+  question.answers.forEach(answer => {
+      let button = document.createElement("button")
+      console.log(button);
+      button.innerText = answer.text
+      button.classList.add("btn-primary")
+      if (answer.correct) {
+          button.dataset.correct = answer.correct
+      }
+      button.addEventListener("click", () => {
+          if (!answer.correct) {
+              secondsLeft = secondsLeft - 10;
+              updateTimer();
+          }
+          currentQuestionIndex++
+          nextQuestion()
+      })
+
+      anwswerButtonsContainer.appendChild(button);
+  });
+}
+
+function gameOver() {
+  clearInterval(timerInterval);
+  questionContainer.classList.add("hide");
+  anwswerButtonsContainer.classList.add("hide");
+  userScore = timeEl.innerText;
+  console.log(userScore);
+  score.classList.remove("hide");
+  userName.classList.remove("hide");
+  submitScore.classList.remove("hide");
+  score.innerText = "Your score is " + userScore;
+  
+}
+
+submitScore.addEventListener("click", function(event) {
+  event.preventDefault();
+  
+  // create user object from submission
+  let userNameInput = document.querySelector("#username");
+  var username = userNameInput.value.trim();
+  
+  // validate the fields
+  if (username === "") {
+    displayMessage("error", "First name cannot be blank");
+  } 
+
+  var queryString = "username=" + username + "&score=" + userScore;
+  window.location.href = "highscore.html?" + queryString;
+
+    // set new submission
+    localStorage.setItem(username, userScore);
+
+
+  }
+);
