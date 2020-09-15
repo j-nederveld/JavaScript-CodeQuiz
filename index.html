@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Code Quiz!</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="reset.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="timer">100</h1>
-        <div id="questions-container" class="hide">
-            <div id="question">Question</div>
+    
+    <div class="container"> 
+        <p id="scores"></p>
+        <div id="score" class="hide">score</div>
+        <div id="question-container" >
+            <div class="timerarea">
+                <p>Time Remaining</p>       
+                <p id="timer">100</p>
+                </div>
+            <div id="question" class="question hide">Question</div>
             <div id="answer-buttons" class="btn-grid">
-                <button id="choice0" class="btn">Answer 1</button>
-                <button id="choice1" class="btn">Answer 2</button>
-                <button id="choice2" class="btn">Answer 3</button>
-                <button id="choice3" class="btn">Answer 4</button>
+                    <!-- buttons will go here -->
             </div>
         </div>
-        <div class="game-start">
+        <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
+            <form action="highscore.html" method="GET">
+            <input class="hide" type="text" id="username" name="username">
+            <button class="hide" id="submit">submit high score</button>
+        </form>
         </div>
     </div>
     <script src="script.js"></script>
