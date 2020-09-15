@@ -1,50 +1,53 @@
-body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+.hide {
+    display: none;
 }
 
 .container {
-    width: 600px;
-    padding: 30px;
-    border-radius: 5px;
+    width: 400px;
+    margin: 50px auto;
+    border: 2px double black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: darkslategrey;
+    color: whitesmoke;
+    box-sizing: border-box;
+    min-height: 300px;
+    position: relative;
 }
 
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.btn {
-    background-color: #2f4f4f;
-    padding: 10px;
-    border-radius: 5px 10px;
-    color: #fff;
-    font-size: 18px;
-}
-
-.start-btn {
-    background-color: #2f4f4f;
-    padding: 15px 30px;
-    border-radius: 5px 10px;
-    color: #fff;
-    font-size: 18px;
-}
-
-.game-start {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#question {
+.text-center {
     text-align: center;
-    font-size: 24px;
-    color: #2f4f4f;
+}
+
+.marginAuto {
+    margin: 0 auto;
+}
+
+.marginTop {
+    margin-top: 20px;
+}
+
+.timerarea {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+#timer {
+    font-size: 48px;
+}
+
+#submit {
+    height: 45px;
+}
+
+.btn-primary {
+    margin: 10px;
+    padding: 5px 35px !important;
+    border-radius: 10px;
+    width: 250px;
+    height: 65px;
+    box-sizing: border-box;
 }
