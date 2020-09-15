@@ -6,30 +6,42 @@
     <title>Document</title>
     <link type="text/css" rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
     
-    <div class="container"> 
-        <p id="scores"></p>
-        <div id="score" class="hide">score</div>
-        <div id="question-container" >
-            <div class="timerarea">
-                <p>Time Remaining</p>       
+    <div class="container">
+
+        <div class="row"> 
+            <div class="col-4 marginAuto text-center timerarea">
+                <p>Time Remaining</p>    
                 <p id="timer">100</p>
-                </div>
-            <div id="question" class="question hide">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                    <!-- buttons will go here -->
             </div>
         </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
+
+        <div class="row text-center marginTop" id="question-container">
+            <div class="col-12 marginAuto">
+                    <!-- question will go here -->
+            <div id="question" class="question hide">Question</div>
+                    <!-- answers will go here -->
+            <div id="answer-buttons" class="btn-grid hide"></div>
+            <p id="scores"></p>
+            <div id="score" class="hide">score</div>
+        </div>
+        </div>
+
+        <div class="row controls text-center">
+
+            <div class="col-12 marginAuto">
+            <button id="start-btn" class="start-btn btn btn-primary">Start</button>
             <form action="highscore.html" method="GET">
             <input class="hide" type="text" id="username" name="username">
-            <button class="hide" id="submit">submit high score</button>
+            <button class="hide btn-primary" id="submit">submit high score</button>
         </form>
         </div>
+        </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
