@@ -58,8 +58,8 @@ const questions = [
     }
 ];
 
-//commited up to here
 
+//globally declared variables for accessing in different quiz functions
 let currentQuestionIndex
 let secondsLeft = 100;
 let timerInterval;
@@ -75,7 +75,7 @@ function startTimer() {
     timerInterval = setInterval(function() {
         secondsLeft--;
         updateTimer();
-
+      //if 0 seconds left, then stop
         if (0 === secondsLeft) {
             clearInterval(timerInterval);
         }
@@ -85,6 +85,10 @@ function startTimer() {
 
 startButton.addEventListener("click", gameStart);
 
+/*
+intitialize timer, and show the question/answer containers
+sets current question index to 0
+ */
 function gameStart() {
     startButton.style.display = "none";
     questionContainer.classList.remove("hide");
@@ -94,6 +98,10 @@ function gameStart() {
     startTimer();
 }
 
+/*
+call function to removePreviousAnswerOptions when next question is called.
+displays question based on the currentQuestionIndex variable
+ */
 function nextQuestion() {
     removePreviousAnswerOptions();
     if (currentQuestionIndex === questions.length) {
@@ -103,13 +111,8 @@ function nextQuestion() {
     showQuestion(questions[currentQuestionIndex])
 }
 
-
-/**
- * removePreviousAnswerOptions
- *
- * Short description
- *
- * @param type Descrtipion
+/*
+remove previous answer options before displaying the next set of options
  */
 function removePreviousAnswerOptions() {
   while (anwswerButtonsContainer.firstChild) {
@@ -117,13 +120,8 @@ function removePreviousAnswerOptions() {
   }
 }
 
-/**
-* showQuestion
-*
-* Shows a question based on the current index.
-*
-* @param object question A question object, as defined in the questions array above.
-*/
+// * Shows a question based on the current index.
+
 function showQuestion(question) {
   questionElement.innerText = question.question;
   question.answers.forEach(answer => {
@@ -134,19 +132,26 @@ function showQuestion(question) {
       if (answer.correct) {
           button.dataset.correct = answer.correct
       }
+      //subtract 10 seconds from timer for every incorrect answer
       button.addEventListener("click", () => {
           if (!answer.correct) {
               secondsLeft = secondsLeft - 10;
               updateTimer();
           }
+        //increase question index by 1 for every guess
           currentQuestionIndex++
           nextQuestion()
       })
-
       anwswerButtonsContainer.appendChild(button);
   });
 }
 
+/*
+  game over. runs when questions are completed or timer hits 0.
+  hides question and answer containers
+  sets userScore to the final timer value
+  shows score/username input elements and allows user to submit their score
+ */
 function gameOver() {
   clearInterval(timerInterval);
   questionContainer.classList.add("hide");
@@ -171,7 +176,7 @@ submitScore.addEventListener("click", function(event) {
   if (username === "") {
     displayMessage("error", "First name cannot be blank");
   } 
-
+  //send data via query string to the highscores page
   var queryString = "username=" + username + "&score=" + userScore;
   window.location.href = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html?" + queryString;
 
