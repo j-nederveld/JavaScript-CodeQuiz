@@ -12,7 +12,6 @@ tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 })
 
-location.reload(window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html");
 
 function setParams(e) {
 e.preventDefault();
