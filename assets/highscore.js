@@ -18,9 +18,10 @@ tryAgain.addEventListener("click", (e) => {
 
 function setParams() {
 
-
+    var field = 'username';
+    var url = window.location.href;
     if(userName = null)
-    return false;
+    return false
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
@@ -38,7 +39,7 @@ for (i = 0; i < localStorage.length; i++) {
     li.textContent = value;
     scoresList.appendChild(li);
     }
-
+   
 }
 
 setParams();
