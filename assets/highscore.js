@@ -6,12 +6,11 @@ let scoresList = document.getElementById("scores");
 const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
-if (userName = null) {
-    return;
-}
-
-
 var storedScores = [];
+
+var date = new Date();
+var timestamp = date.getTime();
+console.log(timestamp);
 
 tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
@@ -20,9 +19,10 @@ tryAgain.addEventListener("click", (e) => {
 
 function setParams() {
 
-var date = new Date();
-var timestamp = date.getTime();
-console.log(timestamp);
+    var field = 'username';
+    var url = window.location.href;
+    if(url.indexOf('?' + field + '=') === -1)
+    return false
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
