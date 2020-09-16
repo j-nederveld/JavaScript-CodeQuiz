@@ -44,3 +44,7 @@ scoresList.appendChild(li);
 }
 
 setParams();
+
+setTimeout(function(){
+    window.location.href = 'https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html';
+ }, 5000);
