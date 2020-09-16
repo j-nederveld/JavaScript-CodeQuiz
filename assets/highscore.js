@@ -29,7 +29,9 @@ clearClick.addEventListener("click", (e) => {
     localStorage.clear();
     window.location = window.location.href.split("?")[0];
 })
+}
 
+function getParams() {
 //get key and value from local storage
 for (i = 0; i < localStorage.length; i++) {
     var keyName = localStorage.key(i);
@@ -44,5 +46,5 @@ for (i = 0; i < localStorage.length; i++) {
     window.history.pushState({}, document.title, "/" + "JavaScript-CodeQuiz/scores/highscore.html");
 }
 
-
+getParams();
 
