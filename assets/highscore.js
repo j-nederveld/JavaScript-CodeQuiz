@@ -20,7 +20,7 @@ function setParams() {
 
 
     if(userName = null)
-    return false
+    return false;
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
