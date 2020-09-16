@@ -6,6 +6,8 @@ let scoresList = document.getElementById("scores");
 const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
+var todos = [];
+
 tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz";
 })
@@ -31,10 +33,10 @@ for (i = 0; i < localStorage.length; i++) {
    var value = parseInt(localStorage.getItem(keyName));
 
 var li = document.createElement("li");
-li.textContent ="Username: " + JSON.parse(keyName) + " Score: " + value;
-scoresList.appendChild(li);
+let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
+todos = storedScores;
     }
 
 }
-
+console.log(todos);
 setParams();
