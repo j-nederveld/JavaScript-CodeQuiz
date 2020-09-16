@@ -48,5 +48,5 @@ clearClick.addEventListener("click", (e) => {
     window.location = window.location.href.split("?")[0];
 })
 
-getParams();
+
 
