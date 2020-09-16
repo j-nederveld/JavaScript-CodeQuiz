@@ -29,16 +29,14 @@ for (i = 0; i < localStorage.length; i++) {
     var keyName = localStorage.key(i);
     var value = localStorage.getItem(keyName); 
 
-    if (value = "Username: null Score: null") {
-        return;
-    }
-    else {
+
+    
     var li = document.createElement("li");
     li.textContent = value;
     scoresList.appendChild(li);
     }
     window.history.pushState({}, document.title, "/" + "JavaScript-CodeQuiz/scores/highscore.html");
-}
+
 }
 
 
