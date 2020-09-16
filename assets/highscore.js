@@ -1,4 +1,3 @@
-
 //check URL for parameters and get username && score
 var urlParams = new URLSearchParams(window.location.search);
 var userName = urlParams.get('username');
