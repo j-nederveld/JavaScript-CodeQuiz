@@ -8,6 +8,17 @@ const userName = document.querySelector("#username");
 const correctAnswer = document.querySelector("#correct");
 const incorrectAnswer = document.querySelector("#incorrect");
 const submitScore = document.querySelector("#submit");
+var incorrectSound = document.querySelector("#incorrectSound");
+var correctSound = document.querySelector("#correctSound");
+
+function playincorrectSound() {
+  incorrectSound.play();
+}
+
+function playcorrectSound() {
+  correctSound.play();
+}
+
 let scores = document.querySelector("#scores");
 let userScore
 let username
@@ -148,12 +159,14 @@ function showQuestion(question) {
       button.addEventListener("click", () => {
           if (!answer.correct) {
               secondsLeft = secondsLeft - 10;
+              playincorrectSound();
               incorrectAnswer.classList.remove("hide");
               correctAnswer.classList.add("hide");
               updateTimer();
           }
           else if (answer = correct) {
-            incorrectAnswer.classList.add("hide");
+              playcorrectSound();
+              incorrectAnswer.classList.add("hide");
               correctAnswer.classList.remove("hide");
           }
 //increase question index by 1 for every guess
