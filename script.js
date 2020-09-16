@@ -175,9 +175,5 @@ submitScore.addEventListener("click", function(event) {
   var queryString = "username=" + username + "&score=" + userScore;
   window.location.href = "highscore.html?" + queryString;
 
-    // set new submission
-    localStorage.setItem(username, userScore);
-
-
   }
 );
