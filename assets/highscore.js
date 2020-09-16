@@ -38,7 +38,7 @@ for (i = 0; i < localStorage.length; i++) {
    console.log(value);
 
 var li = document.createElement("li");
-li.textContent = keyName + " " + value;
+li.textContent = value;
 scoresList.appendChild(li);
     }
 
