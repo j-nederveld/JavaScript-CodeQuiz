@@ -34,10 +34,14 @@ function renderTodos() {
   function init() {
     // Write code here to check if there are todos in localStorage
     // If so, parse the value from localStorage and assign it to the todos variable
-    let storedScores = JSON.parse(localStorage.getItem("ToDo"));
-    if (storedScores !== null) {
-      todos = storedScores;
-    }
+    for (i = 0; i < localStorage.length; i++) {
+        var keyName = localStorage.key(i);
+        var value = parseInt(localStorage.getItem(keyName));
+     
+     
+     let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
+     todos = storedScores;
+         }
     renderTodos();
   }
 
@@ -60,34 +64,34 @@ function renderTodos() {
     // Store updated todos in localStorage, re-render the list
     storeTodos();
     renderTodos();
-    init();
+  
   
 
 
-// function setParams() {
+function setParams() {
 
-//     var field = 'username';
-//     var url = window.location.href;
-//     if(url.indexOf('?' + field + '=') === -1)
-//     return false
+    var field = 'username';
+    var url = window.location.href;
+    if(url.indexOf('?' + field + '=') === -1)
+    return false
 
-// localStorage.setItem(JSON.stringify(userName), score);
+localStorage.setItem(JSON.stringify(userName), score);
 
-// clearClick.addEventListener("click", (e) => {
-//     localStorage.clear();
-//     window.location = window.location.href.split("?")[0];
-// })
+clearClick.addEventListener("click", (e) => {
+    localStorage.clear();
+    window.location = window.location.href.split("?")[0];
+})
 
-// //get key and value from local storage
-// for (i = 0; i < localStorage.length; i++) {
-//    var keyName = localStorage.key(i);
-//    var value = parseInt(localStorage.getItem(keyName));
+//get key and value from local storage
+for (i = 0; i < localStorage.length; i++) {
+   var keyName = localStorage.key(i);
+   var value = parseInt(localStorage.getItem(keyName));
 
-// var li = document.createElement("li");
-// let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
-// todos = storedScores;
-//     }
+var li = document.createElement("li");
+let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
+todos = storedScores;
+    }
 
-// }
-// console.log(todos);
-// setParams();
+}
+console.log(todos);
+setParams();
