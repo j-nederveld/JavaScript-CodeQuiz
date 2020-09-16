@@ -16,6 +16,13 @@ tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 })
 
+if (location.reload()) {
+    var field = 'username';
+    var url = window.location.href;
+    if(url.indexOf('?' + field + '=') === -1)
+    return false
+}
+
 
 function setParams() {
 
