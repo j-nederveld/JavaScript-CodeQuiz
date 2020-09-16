@@ -19,7 +19,7 @@ function setParams() {
     if(url.indexOf('?' + field + '=') === -1)
     return false
 
-localStorage.setItem(test, "Username: " + JSON.stringify(userName) + "Score: " + score);
+localStorage.setItem(JSON.stringify(userName), score);
 
 clearClick.addEventListener("click", (e) => {
     localStorage.clear();
