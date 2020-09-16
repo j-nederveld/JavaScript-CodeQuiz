@@ -41,7 +41,6 @@ var li = document.createElement("li");
 li.textContent = value;
 scoresList.appendChild(li);
     }
-window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html";
 }
 
 setParams();
