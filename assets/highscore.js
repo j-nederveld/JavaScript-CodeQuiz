@@ -6,66 +6,11 @@ let scoresList = document.getElementById("scores");
 const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
-var todos = [];
+var storedScores = [];
 
 tryAgain.addEventListener("click", (e) => {
-    window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz";
+    window.location = "practiceBS.html";
 })
-
-
-function renderTodos() {
-    
-    // Render a new li for each todo
-    for (var i = 0; i < todos.length; i++) {
-      var todo = todos[i];
-  
-      var li = document.createElement("li");
-      li.textContent = todo;
-      li.setAttribute("data-index", i);
-  
-      var button = document.createElement("button");
-      button.textContent = "Complete";
-  
-      li.appendChild(button);
-      todoList.appendChild(li);
-    }
-  }
-
-  function init() {
-    // Write code here to check if there are todos in localStorage
-    // If so, parse the value from localStorage and assign it to the todos variable
-    for (i = 0; i < localStorage.length; i++) {
-        var keyName = localStorage.key(i);
-        var value = parseInt(localStorage.getItem(keyName));
-     
-     
-     let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
-     todos = storedScores;
-         }
-    renderTodos();
-  }
-
-  function storeTodos() {
-    // Add code here to stringify the todos array and save it to the "todos" key in localStorage
-    localStorage.setItem("ToDo", JSON.stringify(todos));
-  }
-  
-    var todoText = todoInput.value.trim();
-  
-    // Return from function early if submitted todoText is blank
-    if (todoText === "") {
-      return;
-    }
-  
-    // Add new todoText to todos array, clear the input
-    todos.push(todoText);
-    todoInput.value = "";
-  
-    // Store updated todos in localStorage, re-render the list
-    storeTodos();
-    renderTodos();
-  
-  
 
 
 function setParams() {
@@ -88,10 +33,10 @@ for (i = 0; i < localStorage.length; i++) {
    var value = parseInt(localStorage.getItem(keyName));
 
 var li = document.createElement("li");
-let storedScores ="Username: " + JSON.parse(keyName) + " Score: " + value;
-todos = storedScores;
+li.textContent = "Username: " + JSON.parse(keyName) + " Score: " + value;
+scoresList.appendChild(li);
     }
 
 }
-console.log(todos);
+
 setParams();
