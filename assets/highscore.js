@@ -42,5 +42,5 @@ for (i = 0; i < localStorage.length; i++) {
     
 }
 
-setParams();
+
 
