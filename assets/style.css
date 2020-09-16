@@ -35,6 +35,11 @@
     color: whitesmoke;
 }
 
+.hr {
+    color: whitesmoke;
+    border: 1px solid;
+}
+
 #timer {
     font-size: 48px;
 }
