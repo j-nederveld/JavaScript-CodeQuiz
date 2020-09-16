@@ -39,6 +39,7 @@ for (i = 0; i < localStorage.length; i++) {
     li.textContent = value;
     scoresList.appendChild(li);
     }
+    window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 }
 
 setParams();
