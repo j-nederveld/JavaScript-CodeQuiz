@@ -16,46 +16,55 @@ const questions = [
   {
     question: 'Which one is not equal?',
     answers: [
-      { text: 'x.notEqual(y);', correct: false },
-      { text: 'x != y', correct: true },
-      { text: 'x = x', correct: false },
-      { text: '22', correct: false }
+      { text: 'A.  x.notEqual(y);', correct: false },
+      { text: 'B.  x != y', correct: true },
+      { text: 'C.  x = x', correct: false },
+      { text: 'D.  22', correct: false }
     ]
   },
   {
       question: 'Which one is equal?',
       answers: [
-          { text: '4 === "4"', correct: false },
-          { text: 'something = nothing', correct: false },
-          { text: '"4" === "4"', correct: true },
-          { text: 'maybe?', correct: false }
+          { text: 'A.  4 === "4"', correct: false },
+          { text: 'B.  something = nothing', correct: false },
+          { text: 'C.  "4" === "4"', correct: true },
+          { text: 'D.  maybe?', correct: false }
       ]
     },
     {
       question: 'Which of these can change?',
       answers: [
-        { text: 'b & d', correct: true },
-        { text: 'let', correct: false },
-        { text: 'const', correct: false },
-        { text: 'var', correct: false }
+        { text: 'A.  b & d', correct: true },
+        { text: 'B.  let', correct: false },
+        { text: 'C.  const', correct: false },
+        { text: 'D.  var', correct: false }
       ]
     },
     {
       question: 'When was javascript created?',
       answers: [
-        { text: '1995', correct: true },
-        { text: '1989', correct: false },
-        { text: '1997', correct: false },
-        { text: '2021', correct: false }
+        { text: 'A.  1995', correct: true },
+        { text: 'B.  1989', correct: false },
+        { text: 'C.  1997', correct: false },
+        { text: 'D.  2021', correct: false }
+      ]
+    },
+    {
+      question: 'What is at the beginning of a query string?',
+      answers: [
+        { text: 'A.  .', correct: false},
+        { text: 'B.  &', correct: false },
+        { text: 'C.  /', correct: false },
+        { text: 'D.  ?', correct: true }
       ]
     },
   {
       question: '8 + 2?',
       answers: [
-        { text: '4', correct: false },
-        { text: '15', correct: false },
-        { text: '10', correct: true },
-        { text: '-12', correct: false }
+        { text: 'A.  4', correct: false },
+        { text: 'B.  15', correct: false },
+        { text: 'C.  10', correct: true },
+        { text: 'D.  -12', correct: false }
       ]
     }
 ];
