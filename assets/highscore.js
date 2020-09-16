@@ -29,7 +29,7 @@ for (i = 0; i < localStorage.length; i++) {
     var keyName = localStorage.key(i);
     var value = localStorage.getItem(keyName); 
 
-    if (keyName = null) {
+    if (value = "Username: null Score: null") {
         return;
     }
 
