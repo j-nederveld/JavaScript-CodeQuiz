@@ -14,7 +14,7 @@ let username
 
 const questions = [
   {
-    question: 'Which one is not equal?',
+    question: '1/6: Which one is not equal?',
     answers: [
       { text: 'A.  x.notEqual(y);', correct: false },
       { text: 'B.  x != y', correct: true },
@@ -23,7 +23,7 @@ const questions = [
     ]
   },
   {
-      question: 'Which one is equal?',
+      question: '2/6: Which one is equal?',
       answers: [
           { text: 'A.  4 === "4"', correct: false },
           { text: 'B.  something = nothing', correct: false },
@@ -32,7 +32,7 @@ const questions = [
       ]
     },
     {
-      question: 'Which of these can change?',
+      question: '3/6: Which of these can change?',
       answers: [
         { text: 'A.  b & d', correct: true },
         { text: 'B.  let', correct: false },
@@ -41,7 +41,7 @@ const questions = [
       ]
     },
     {
-      question: 'When was javascript created?',
+      question: '4/6: When was javascript created?',
       answers: [
         { text: 'A.  1995', correct: true },
         { text: 'B.  1989', correct: false },
@@ -50,7 +50,7 @@ const questions = [
       ]
     },
     {
-      question: 'What is at the beginning of a query string?',
+      question: '5/6: What is at the beginning of a query string?',
       answers: [
         { text: 'A.  .', correct: false},
         { text: 'B.  &', correct: false },
@@ -59,7 +59,7 @@ const questions = [
       ]
     },
   {
-      question: '8 + 2?',
+      question: '6/6: 8 + 2?',
       answers: [
         { text: 'A.  4', correct: false },
         { text: 'B.  15', correct: false },
