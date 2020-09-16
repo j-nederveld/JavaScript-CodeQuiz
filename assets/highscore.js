@@ -20,9 +20,8 @@ if (location.reload()) {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html"
 }
 
-
-function setParams() {
-
+function setParams(e) {
+e.preventDefault();
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
 clearClick.addEventListener("click", (e) => {
