@@ -1,3 +1,10 @@
+/*
+
+  i know i did not need to use a query string to pass the values but i wanted to see if i could make it work, and i did!
+  
+ */
+
+
 //check URL for parameters and get username && score
 var urlParams = new URLSearchParams(window.location.search);
 var userName = urlParams.get('username');
@@ -31,7 +38,6 @@ localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Scor
 }
 //call function
 setParams();
-
 
 //get existing parameters from local storage on page load (if they exist)
 function getParams() {
