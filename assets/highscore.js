@@ -39,7 +39,7 @@ for (i = 0; i < localStorage.length; i++) {
     li.textContent = value;
     scoresList.appendChild(li);
     }
-    window.history.pushState({}, document.title, "/" + "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html");
+    window.history.pushState({}, document.title, "/" + "JavaScript-CodeQuiz/scores/highscore.html");
 }
 
 
