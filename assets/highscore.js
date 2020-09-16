@@ -26,6 +26,7 @@ function setParams() {
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
 }
+setParams();
 
 function getParams() {
 //get key and value from local storage
