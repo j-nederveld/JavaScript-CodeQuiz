@@ -6,11 +6,10 @@ let scoresList = document.getElementById("scores");
 const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
-var storedScores = [];
-
 var date = new Date();
 var timestamp = date.getTime();
-console.log(timestamp);
+
+console.log(userName);
 
 tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
@@ -33,13 +32,12 @@ clearClick.addEventListener("click", (e) => {
 
 //get key and value from local storage
 for (i = 0; i < localStorage.length; i++) {
-   var keyName = localStorage.key(i);
-   var value = localStorage.getItem(keyName);
-   console.log(value);
+    var keyName = localStorage.key(i);
+    var value = localStorage.getItem(keyName); 
 
-var li = document.createElement("li");
-li.textContent = value;
-scoresList.appendChild(li);
+    var li = document.createElement("li");
+    li.textContent = value;
+    scoresList.appendChild(li);
     }
 }
 
