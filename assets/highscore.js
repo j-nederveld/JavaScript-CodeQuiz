@@ -9,7 +9,7 @@ const tryAgain = document.getElementById("try-again");
 var storedScores = [];
 
 tryAgain.addEventListener("click", (e) => {
-    window.location = "practiceBS.html";
+    window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 })
 
 
