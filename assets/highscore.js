@@ -17,10 +17,7 @@ tryAgain.addEventListener("click", (e) => {
 })
 
 if (location.reload()) {
-    var field = 'username';
-    var url = window.location.href;
-    if(url.indexOf('?' + field + '=') === -1)
-    return false
+    window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html"
 }
 
 
