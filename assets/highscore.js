@@ -8,6 +8,9 @@ const tryAgain = document.getElementById("try-again");
 
 var storedScores = [];
 
+var date = new Date();
+var timestamp = date.getTime();
+
 tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 })
@@ -20,7 +23,7 @@ function setParams() {
     if(url.indexOf('?' + field + '=') === -1)
     return false
 
-localStorage.setItem(JSON.stringify(userName), score);
+localStorage.setItem(tiimestamp, "Username: " + JSON.stringify(userName) + "Score: " + score);
 
 clearClick.addEventListener("click", (e) => {
     localStorage.clear();
