@@ -4,8 +4,12 @@ var urlParams = new URLSearchParams(window.location.search);
 var userName = urlParams.get('username');
 var score = urlParams.get('score');
 let scoresList = document.getElementById("scores");
-const clearClick = document.getElementById("clear")
+const clearClick = document.getElementById("clear");
+const tryAgain = document.getElementById("try-again");
 
+tryAgain.addEventListener("click", (e) => {
+    window.location = "index.html";
+})
 
 
 function setParams() {
@@ -21,7 +25,6 @@ clearClick.addEventListener("click", (e) => {
     localStorage.clear();
     window.location = window.location.href.split("?")[0];
 })
-
 
 //get key and value from local storage
 for (i = 0; i < localStorage.length; i++) {

@@ -173,7 +173,7 @@ submitScore.addEventListener("click", function(event) {
   } 
 
   var queryString = "username=" + username + "&score=" + userScore;
-  window.location.href = "highscore.html?" + queryString;
+  window.location.href = "https://j-nederveld.github.io/JavaScript-CodeQuiz/scores/highscore.html?" + queryString;
 
   }
 );
