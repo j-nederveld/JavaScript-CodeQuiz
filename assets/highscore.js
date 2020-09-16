@@ -8,7 +8,7 @@ const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
 tryAgain.addEventListener("click", (e) => {
-    window.location = "index.html";
+    window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz";
 })
 
 
