@@ -37,7 +37,7 @@ for (i = 0; i < localStorage.length; i++) {
    var value = parseInt(localStorage.getItem(keyName));
 
 var li = document.createElement("li");
-li.textContent = JSON.parse(keyName) + value;
+li.textContent = keyName + " " + value;
 scoresList.appendChild(li);
     }
 
