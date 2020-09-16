@@ -6,6 +6,11 @@ let scoresList = document.getElementById("scores");
 const clearClick = document.getElementById("clear");
 const tryAgain = document.getElementById("try-again");
 
+if (userName = null) {
+    return;
+}
+
+
 var storedScores = [];
 
 tryAgain.addEventListener("click", (e) => {
