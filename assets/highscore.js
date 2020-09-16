@@ -13,8 +13,8 @@ tryAgain.addEventListener("click", (e) => {
 })
 
 
-function setParams(e) {
-e.preventDefault();
+function setParams() {
+
 var date = new Date();
 var timestamp = date.getTime();
 console.log(timestamp);
