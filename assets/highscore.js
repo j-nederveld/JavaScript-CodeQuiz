@@ -25,10 +25,6 @@ function setParams() {
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
-clearClick.addEventListener("click", (e) => {
-    localStorage.clear();
-    window.location = window.location.href.split("?")[0];
-})
 }
 
 function getParams() {
@@ -45,6 +41,11 @@ for (i = 0; i < localStorage.length; i++) {
     }
     window.history.pushState({}, document.title, "/" + "JavaScript-CodeQuiz/scores/highscore.html");
 }
+
+clearClick.addEventListener("click", (e) => {
+    localStorage.clear();
+    window.location = window.location.href.split("?")[0];
+})
 
 getParams();
 
