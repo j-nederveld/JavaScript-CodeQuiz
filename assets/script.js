@@ -149,7 +149,6 @@ function showQuestion(question) {
   questionElement.innerText = question.question;
   question.answers.forEach(answer => {
       let button = document.createElement("button")
-      console.log(button);
       button.innerText = answer.text
       button.classList.add("btn-primary")
       if (answer.correct) {
@@ -190,7 +189,6 @@ function gameOver() {
   questionContainer.classList.add("hide");
   anwswerButtonsContainer.classList.add("hide");
   userScore = timeEl.innerText;
-  console.log(userScore);
   score.classList.remove("hide");
   userName.classList.remove("hide");
   submitScore.classList.remove("hide");
