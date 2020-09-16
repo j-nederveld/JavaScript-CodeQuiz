@@ -5,6 +5,8 @@ const anwswerButtonsContainer = document.querySelector("#answer-buttons");
 const score = document.querySelector("#score");
 const timeEl = document.querySelector("#timer");
 const userName = document.querySelector("#username");
+const correctAnswer = document.querySelector("#correct");
+const incorrectAnswer = document.querySelector("#incorrect");
 const submitScore = document.querySelector("#submit");
 let scores = document.querySelector("#scores");
 let userScore
@@ -100,7 +102,9 @@ function gameStart() {
 
 /*
 call function to removePreviousAnswerOptions when next question is called.
-displays question based on the currentQuestionIndex variable
+displays question based on the currentQuestionIndex variable.
+
+Runs game over function once user has answered each question.
  */
 function nextQuestion() {
     removePreviousAnswerOptions();
@@ -121,7 +125,6 @@ function removePreviousAnswerOptions() {
 }
 
 // * Shows a question based on the current index.
-
 function showQuestion(question) {
   questionElement.innerText = question.question;
   question.answers.forEach(answer => {
@@ -132,13 +135,19 @@ function showQuestion(question) {
       if (answer.correct) {
           button.dataset.correct = answer.correct
       }
-      //subtract 10 seconds from timer for every incorrect answer
+//subtract 10 seconds from timer for every incorrect answer
       button.addEventListener("click", () => {
           if (!answer.correct) {
               secondsLeft = secondsLeft - 10;
+              incorrectAnswer.classList.remove("hide");
+              correctAnswer.classList.add("hide");
               updateTimer();
           }
-        //increase question index by 1 for every guess
+          else if (answer = correct) {
+            incorrectAnswer.classList.add("hide");
+              correctAnswer.classList.remove("hide");
+          }
+//increase question index by 1 for every guess
           currentQuestionIndex++
           nextQuestion()
       })
@@ -154,6 +163,8 @@ function showQuestion(question) {
  */
 function gameOver() {
   clearInterval(timerInterval);
+  incorrectAnswer.classList.add("hide");
+  correctAnswer.classList.add("hide");
   questionContainer.classList.add("hide");
   anwswerButtonsContainer.classList.add("hide");
   userScore = timeEl.innerText;
@@ -162,7 +173,6 @@ function gameOver() {
   userName.classList.remove("hide");
   submitScore.classList.remove("hide");
   score.innerText = "Your score is " + userScore;
-  
 }
 
 submitScore.addEventListener("click", function(event) {
