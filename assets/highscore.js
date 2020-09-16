@@ -18,9 +18,8 @@ tryAgain.addEventListener("click", (e) => {
 
 function setParams() {
 
-    var field = 'username';
-    var url = window.location.href;
-    if(url.indexOf('?' + field + '=') === -1)
+
+    if(userName = null)
     return false
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
