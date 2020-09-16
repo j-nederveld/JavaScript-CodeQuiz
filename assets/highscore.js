@@ -15,12 +15,13 @@ tryAgain.addEventListener("click", (e) => {
     window.location = "https://j-nederveld.github.io/JavaScript-CodeQuiz/";
 })
 
- var field = 'username';
- var url = window.location.href;
- if(url.indexOf('?' + field + '=') === -1) {
- return false;}
-
 function setParams() {
+
+    var field = 'username';
+    var url = window.location.href;
+    if(url.indexOf('?' + field + '=') === -1) {
+    return false;
+}
 
 localStorage.setItem(timestamp, "Username: " + JSON.stringify(userName) + " Score: " + score);
 
