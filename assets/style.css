@@ -53,6 +53,10 @@ html, body {
     font-size: 48px;
 }
 
+#start-btn {
+    font-size: 28px;
+}
+
 #submit {
     height: 45px;
 }
